@@ -1,4 +1,4 @@
-class ProductController < ApplicationController
+class ProductsController < ApplicationController
 
   def index
     @products = Product.all
@@ -10,8 +10,15 @@ class ProductController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    return product_path if product.save
-    render :new
+    if @product.save
+      redirect_to products_path
+    else
+      render :new
+    end
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   private
