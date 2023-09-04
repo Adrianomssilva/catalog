@@ -2,6 +2,7 @@
 <h1>Lista de Produtos</h1>
 
 <% @products.each do |product| %>
- <li><%=link_to product.name, product %></li>
+  <li><%=link_to product.name, product %></li>
+  <%= link_to "Editar", edit_product_path(product)%>
 <% end %>
 
