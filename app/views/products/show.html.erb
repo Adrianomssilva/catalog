@@ -1,2 +1,5 @@
 <h3><%=@product.name%></h3>
 <h3><%=@product.price%></h3>
+
+<div><%= link_to  "Início", root_path %></div>
+<div><%= link_to  "Delete", product_path, data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></div>
